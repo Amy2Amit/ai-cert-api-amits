@@ -38,7 +38,7 @@ jobs:
           app-name: ai-cert-api-web-dev          # Your Azure Web App name
           slot-name: production
           package: .
-          startup-command: "gunicorn -w 4 -b 0.0.0.0:8000 main:app"  # Adjust if your entry file or app name is different
+          startup-command: "uvicorn app.main:app --host 0.0.0.0 --port 8000"
 
       # Step 6: Set environment variables from GitHub secrets
       - name: Set environment variables
