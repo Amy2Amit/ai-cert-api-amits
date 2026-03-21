@@ -1,0 +1,126 @@
+2026-03-20 10:16:31,547 - INFO - Starting pipeline for: data/input/ACORD25.pdf
+2026-03-20 10:16:31,590 - INFO - File read successfully
+2026-03-20 10:16:31,591 - INFO - Pipeline executed successfully
+2026-03-20 11:12:37,297 - INFO - Starting pipeline
+2026-03-20 11:12:38,021 - ERROR - Pipeline failed: name 'PASSWORD' is not defined
+2026-03-20 11:14:44,934 - INFO - Starting pipeline
+2026-03-20 11:20:06,718 - INFO - Starting pipeline
+2026-03-20 11:24:56,284 - INFO - Starting pipeline
+2026-03-20 11:26:14,318 - INFO - Starting pipeline
+2026-03-20 11:29:35,046 - INFO - Starting pipeline
+2026-03-20 12:42:30,564 - INFO - \U0001f680 Starting pipeline
+2026-03-20 12:42:37,727 - INFO - No new emails found
+2026-03-20 12:48:02,462 - INFO - \U0001f680 Starting pipeline
+2026-03-20 12:48:09,550 - INFO - No new emails found
+2026-03-20 12:55:28,406 - INFO - \U0001f680 Starting pipeline
+2026-03-20 12:55:35,207 - INFO - No new emails found
+2026-03-20 12:59:23,984 - INFO - \U0001f680 Starting pipeline
+2026-03-20 12:59:30,409 - INFO - No new emails found
+2026-03-20 13:02:06,257 - INFO - \U0001f680 Starting pipeline
+2026-03-20 13:02:12,832 - INFO - No new emails found
+2026-03-20 13:07:17,412 - INFO - \U0001f680 Starting pipeline
+2026-03-20 13:07:25,505 - INFO - No new emails found
+2026-03-20 13:10:38,112 - INFO - \U0001f680 Starting pipeline
+2026-03-20 13:10:47,249 - INFO - No new emails found
+2026-03-20 13:14:19,648 - INFO - \U0001f680 Starting pipeline
+2026-03-20 13:14:28,166 - INFO - No new emails found
+2026-03-20 13:15:59,610 - INFO - \U0001f680 Starting pipeline
+2026-03-20 13:16:08,179 - INFO - No new emails found
+2026-03-20 13:17:18,310 - INFO - \U0001f680 Starting pipeline
+2026-03-20 13:17:27,455 - INFO - No new emails found
+2026-03-20 13:19:58,068 - INFO - \U0001f680 Starting pipeline
+2026-03-20 13:20:06,346 - INFO - No new emails found
+2026-03-20 13:26:15,707 - INFO - \U0001f680 Starting pipeline
+2026-03-20 13:26:25,326 - INFO - No new emails found
+2026-03-20 13:33:26,196 - INFO - \U0001f680 Starting pipeline
+2026-03-20 13:33:48,231 - INFO - \U0001f4c4 Processing: mock_files/email/ACORD25.pdf
+2026-03-20 13:33:48,271 - INFO - \u2705 Processed: ACORD25
+2026-03-20 13:33:48,272 - INFO - \U0001f4c1 Output saved to S:\Amit Practice\Projects\AI Agent Projects\AI_CERTIFICATE_PROCESS_AGENT\output.json
+2026-03-20 13:33:48,272 - INFO - \U0001f3af Pipeline execution completed successfully
+2026-03-20 13:44:36,617 - INFO - \U0001f680 Starting pipeline
+2026-03-20 13:44:45,269 - INFO - No new emails found
+2026-03-20 13:45:33,113 - INFO - \U0001f680 Starting pipeline
+2026-03-20 13:45:56,587 - INFO - \U0001f4c4 Processing: mock_files/email/ACORD25.pdf
+2026-03-20 13:45:56,602 - INFO - \u2705 Processed: ACORD25
+2026-03-20 13:45:56,603 - INFO - \U0001f4c1 Output saved to S:\Amit Practice\Projects\AI Agent Projects\AI_CERTIFICATE_PROCESS_AGENT\output.json
+2026-03-20 13:45:56,603 - INFO - \U0001f3af Pipeline execution completed successfully
+2026-03-20 15:51:16,407 - INFO - \U0001f680 Starting pipeline
+2026-03-20 15:51:23,294 - INFO - No new emails found
+2026-03-20 15:56:10,693 - INFO - \U0001f680 Starting pipeline
+2026-03-20 15:56:16,637 - INFO - No new emails found
+2026-03-20 15:59:43,566 - INFO - \U0001f680 Starting pipeline
+2026-03-20 15:59:50,621 - INFO - No new emails found
+2026-03-20 16:00:29,134 - INFO - \U0001f680 Starting pipeline
+2026-03-20 16:00:36,826 - INFO - No new emails found
+2026-03-20 16:01:39,005 - INFO - \U0001f680 Starting pipeline
+2026-03-20 16:01:44,680 - INFO - No new emails found
+2026-03-20 16:02:36,710 - INFO - \U0001f680 Starting pipeline
+2026-03-20 16:02:56,641 - INFO - \U0001f4c4 Processing: mock_files/email/ACORD25.pdf
+2026-03-20 16:02:56,676 - INFO - \u2705 Processed: ACORD25
+2026-03-20 16:02:56,677 - INFO - \U0001f4c1 Output saved to S:\Amit Practice\Projects\AI Agent Projects\AI_CERTIFICATE_PROCESS_AGENT\output.json
+2026-03-20 16:02:56,677 - INFO - \U0001f3af Pipeline execution completed successfully
+2026-03-20 16:06:17,776 - INFO - \U0001f680 Starting pipeline
+2026-03-20 16:06:38,900 - INFO - \U0001f4c4 Processing: mock_files/email/ACORD25_1.pdf
+2026-03-20 16:06:38,912 - INFO - \u2705 Processed: ACORD25_1
+2026-03-20 16:06:38,912 - INFO - \U0001f4c1 Output saved to S:\Amit Practice\Projects\AI Agent Projects\AI_CERTIFICATE_PROCESS_AGENT\output.json
+2026-03-20 16:06:38,912 - INFO - \U0001f3af Pipeline execution completed successfully
+2026-03-20 16:19:09,863 - INFO - \U0001f680 Starting pipeline
+2026-03-20 16:19:19,091 - INFO - \U0001f4c4 Processing: mock_files/email/ACORD25.pdf
+2026-03-20 16:19:19,102 - INFO - \u2705 Processed: ACORD25
+2026-03-20 16:19:19,103 - INFO - \U0001f4c1 Output saved to S:\Amit Practice\Projects\AI Agent Projects\AI_CERTIFICATE_PROCESS_AGENT\output.json
+2026-03-20 16:19:19,103 - INFO - \U0001f3af Pipeline execution completed successfully
+2026-03-20 16:21:34,669 - INFO - \U0001f680 Starting pipeline
+2026-03-20 16:21:45,125 - INFO - \U0001f4c4 Processing: mock_files/email/ACORD25_1.pdf
+2026-03-20 16:21:45,132 - INFO - \u2705 Processed: ACORD25_1
+2026-03-20 16:21:45,132 - INFO - \U0001f4c1 Output saved to S:\Amit Practice\Projects\AI Agent Projects\AI_CERTIFICATE_PROCESS_AGENT\output.json
+2026-03-20 16:21:45,132 - INFO - \U0001f3af Pipeline execution completed successfully
+2026-03-20 16:57:19,286 - INFO - \U0001f680 Starting pipeline
+2026-03-20 16:57:26,281 - INFO - \U0001f4c4 Processing: mock_files/email/ACORD25.pdf
+2026-03-20 16:57:26,323 - INFO - \u2705 Processed: ACORD25
+2026-03-20 16:57:26,324 - INFO - \U0001f4c1 Output saved to S:\Amit Practice\Projects\AI Agent Projects\AI_CERTIFICATE_PROCESS_AGENT\output.json
+2026-03-20 16:57:26,324 - INFO - \U0001f3af Pipeline execution completed successfully
+2026-03-20 17:07:20,074 - INFO - \U0001f680 Starting pipeline
+2026-03-20 17:07:32,630 - INFO - \U0001f4c4 Processing: mock_files/download/ACORD25.pdf
+2026-03-20 17:07:32,653 - INFO - \u2705 Processed: ACORD25
+2026-03-20 17:07:32,654 - INFO - \U0001f4c1 Output saved to S:\Amit Practice\Projects\AI Agent Projects\AI_CERTIFICATE_PROCESS_AGENT\output.json
+2026-03-20 17:07:32,654 - INFO - \U0001f3af Pipeline execution completed successfully
+2026-03-20 17:21:21,149 - INFO - \U0001f680 Starting pipeline
+2026-03-20 17:21:33,952 - INFO - \U0001f4c4 Processing: downloadcertificates/download/ACORD25.pdf
+2026-03-20 17:21:33,962 - INFO - \u2705 Processed: ACORD25
+2026-03-20 17:21:33,962 - INFO - \U0001f4c1 Output saved to S:\Amit Practice\Projects\AI Agent Projects\AI_CERTIFICATE_PROCESS_AGENT\output.json
+2026-03-20 17:21:33,963 - INFO - \U0001f3af Pipeline execution completed successfully
+2026-03-20 18:08:22,712 - INFO - \U0001f680 Starting pipeline
+2026-03-20 18:08:29,967 - INFO - \U0001f4c4 Processing: downloadcertificates/download/ACORD25_1.pdf
+2026-03-20 18:08:29,976 - INFO - \u2705 Processed: ACORD25_1
+2026-03-20 18:08:29,976 - INFO - \U0001f4c1 Output saved to S:\Amit Practice\Projects\AI Agent Projects\AI_CERTIFICATE_PROCESS_AGENT\output.json
+2026-03-20 18:08:29,976 - INFO - \U0001f3af Pipeline execution completed successfully
+2026-03-21 11:13:41,526 - INFO - \U0001f680 Pipeline started
+2026-03-21 11:13:41,534 - INFO - \U0001f4e6 Database initialized
+2026-03-21 11:14:10,517 - INFO - \U0001f4e7 No new PDF files found
+2026-03-21 11:22:15,868 - INFO - \U0001f680 Pipeline started
+2026-03-21 11:22:15,870 - INFO - \U0001f4e6 Database initialized
+2026-03-21 11:22:44,210 - INFO - \U0001f4e7 No new PDF files found
+2026-03-21 11:24:46,752 - INFO - \U0001f680 Pipeline started
+2026-03-21 11:24:46,753 - INFO - \U0001f4e6 Database initialized
+2026-03-21 11:25:12,860 - INFO - \U0001f4e7 No new PDF files found
+2026-03-21 11:26:49,178 - INFO - \U0001f680 Pipeline started
+2026-03-21 11:26:49,179 - INFO - \U0001f4e6 Database initialized
+2026-03-21 11:27:18,836 - INFO - \U0001f4e7 No new PDF files found
+2026-03-21 11:28:38,495 - INFO - \U0001f680 Pipeline started
+2026-03-21 11:28:38,497 - INFO - \U0001f4e6 Database initialized
+2026-03-21 11:29:03,257 - INFO - \U0001f4e7 No new PDF files found
+2026-03-21 11:30:20,529 - INFO - \U0001f680 Pipeline started
+2026-03-21 11:30:20,538 - INFO - \U0001f4e6 Database initialized
+2026-03-21 11:30:50,658 - INFO - \U0001f4e7 No new PDF files found
+2026-03-21 11:34:37,066 - INFO - \U0001f680 Pipeline started
+2026-03-21 11:34:37,067 - INFO - \U0001f4e6 Database initialized
+2026-03-21 11:34:59,907 - INFO - \U0001f4e7 No new PDF files found
+2026-03-21 11:38:15,330 - INFO - \U0001f680 Pipeline started
+2026-03-21 11:38:15,331 - INFO - \U0001f4e6 Database initialized
+2026-03-21 11:38:19,057 - INFO - \U0001f4c4 Processing PDF: downloadcertificates/download/ACORD25.pdf
+2026-03-21 11:38:19,074 - INFO - \u2705 Extracted fields for Unknown
+2026-03-21 11:38:19,083 - INFO - \U0001f4be Record inserted for Unknown
+2026-03-21 11:38:19,084 - INFO - \U0001f4dd JSON saved at S:\Amit Practice\AI_CERTIFICATE_PROCESS_AGENT\data\output\Unknown.json
+2026-03-21 11:38:19,084 - INFO - \U0001f3af Pipeline completed successfully
+2026-03-21 12:08:52,625 - INFO - \U0001f680 Pipeline started
+2026-03-21 12:23:34,229 - INFO - \U0001f680 Pipeline started
