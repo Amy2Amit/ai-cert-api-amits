@@ -22,6 +22,7 @@ try:
     import pytesseract
 except Exception as e:
     print("ERROR importing pytesseract:", e)
+    pytesseract = None
 
 # -----------------------------
 # Create FastAPI app
@@ -33,7 +34,7 @@ app = FastAPI(
 )
 
 # -----------------------------
-# Debug / Health Check (shows stack trace if error)
+# Health Check (debug safe)
 # -----------------------------
 @app.get("/", response_class=PlainTextResponse)
 def home():
