@@ -4,7 +4,7 @@ from datetime import datetime
 import traceback
 
 # -----------------------------
-# Attempt to import dependencies
+# Try imports safely
 # -----------------------------
 try:
     from app.pipeline.pipeline import run_pipeline
@@ -18,14 +18,15 @@ except Exception as e:
     print("ERROR importing fetch_all_certificates:", e)
     fetch_all_certificates = None
 
+# Bypass pytesseract for Azure deployment
 try:
     import pytesseract
 except Exception as e:
-    print("ERROR importing pytesseract:", e)
+    print("Tesseract not available:", e)
     pytesseract = None
 
 # -----------------------------
-# Create FastAPI app
+# FastAPI app
 # -----------------------------
 app = FastAPI(
     title="AI Insurance Certificate Processing API",
@@ -33,9 +34,7 @@ app = FastAPI(
     version="1.0"
 )
 
-# -----------------------------
-# Health Check (debug safe)
-# -----------------------------
+# Health check
 @app.get("/", response_class=PlainTextResponse)
 def home():
     try:
@@ -43,43 +42,27 @@ def home():
     except Exception as e:
         return str(e) + "\n\n" + traceback.format_exc()
 
-# -----------------------------
-# Trigger Pipeline
-# -----------------------------
+# Trigger pipeline
 @app.post("/process-certificates")
 def process_certificates():
     try:
         if run_pipeline is None:
-            raise RuntimeError("Pipeline module not available")
+            return {"status": "error", "message": "Pipeline not available"}
+        # Skip OCR if pytesseract is missing
+        if pytesseract is None:
+            return {"status": "error", "message": "OCR (pytesseract) not available"}
         run_pipeline()
-        return {
-            "status": "success",
-            "message": "Pipeline executed successfully"
-        }
+        return {"status": "success", "message": "Pipeline executed successfully"}
     except Exception as e:
-        return {
-            "status": "error",
-            "message": str(e),
-            "trace": traceback.format_exc()
-        }
+        return {"status": "error", "message": str(e), "trace": traceback.format_exc()}
 
-# -----------------------------
-# Fetch All Certificates
-# -----------------------------
+# Fetch all certificates
 @app.get("/certificates")
 def get_certificates():
     try:
         if fetch_all_certificates is None:
-            raise RuntimeError("Database handler module not available")
+            return {"status": "error", "message": "DB handler not available"}
         data = fetch_all_certificates()
-        return {
-            "status": "success",
-            "count": len(data),
-            "data": data
-        }
+        return {"status": "success", "count": len(data), "data": data}
     except Exception as e:
-        return {
-            "status": "error",
-            "message": str(e),
-            "trace": traceback.format_exc()
-        }
+        return {"status": "error", "message": str(e), "trace": traceback.format_exc()}
