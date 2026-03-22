@@ -1,37 +1,55 @@
 from fastapi import FastAPI
+from fastapi.responses import PlainTextResponse
 from datetime import datetime
+import traceback
 
-from app.pipeline.pipeline import run_pipeline
-from app.database.db_handler import fetch_all_certificates
+# -----------------------------
+# Attempt to import dependencies
+# -----------------------------
+try:
+    from app.pipeline.pipeline import run_pipeline
+except Exception as e:
+    print("ERROR importing run_pipeline:", e)
+    run_pipeline = None
 
+try:
+    from app.database.db_handler import fetch_all_certificates
+except Exception as e:
+    print("ERROR importing fetch_all_certificates:", e)
+    fetch_all_certificates = None
+
+try:
+    import pytesseract
+except Exception as e:
+    print("ERROR importing pytesseract:", e)
+
+# -----------------------------
+# Create FastAPI app
+# -----------------------------
 app = FastAPI(
     title="AI Insurance Certificate Processing API",
     description="Processes ACORD25 PDFs from email → OCR → DB",
     version="1.0"
 )
 
-
 # -----------------------------
-# Health Check
+# Debug / Health Check (shows stack trace if error)
 # -----------------------------
-@app.get("/")
+@app.get("/", response_class=PlainTextResponse)
 def home():
-    return {
-        "message": "API is running",
-        "timestamp": datetime.now()
-    }
-
+    try:
+        return f"API is running - {datetime.now()}"
+    except Exception as e:
+        return str(e) + "\n\n" + traceback.format_exc()
 
 # -----------------------------
 # Trigger Pipeline
 # -----------------------------
 @app.post("/process-certificates")
 def process_certificates():
-    """
-    Trigger full pipeline:
-    Email → PDF → OCR → JSON → SQLite
-    """
     try:
+        if run_pipeline is None:
+            raise RuntimeError("Pipeline module not available")
         run_pipeline()
         return {
             "status": "success",
@@ -40,19 +58,18 @@ def process_certificates():
     except Exception as e:
         return {
             "status": "error",
-            "message": str(e)
+            "message": str(e),
+            "trace": traceback.format_exc()
         }
-
 
 # -----------------------------
 # Fetch All Certificates
 # -----------------------------
 @app.get("/certificates")
 def get_certificates():
-    """
-    Fetch all processed certificate records from SQLite
-    """
     try:
+        if fetch_all_certificates is None:
+            raise RuntimeError("Database handler module not available")
         data = fetch_all_certificates()
         return {
             "status": "success",
@@ -62,5 +79,6 @@ def get_certificates():
     except Exception as e:
         return {
             "status": "error",
-            "message": str(e)
+            "message": str(e),
+            "trace": traceback.format_exc()
         }
