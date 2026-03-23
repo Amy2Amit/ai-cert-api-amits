@@ -1,0 +1,82 @@
+name: CI/CD Pipeline with Notifications
+
+# Trigger: push to main, manual, or daily schedule
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+  schedule:
+    - cron: "0 6 * * *"  # Daily at 6 AM UTC
+
+jobs:
+  build-run-pipeline:
+    runs-on: windows-latest
+    env:
+      SMTP_SERVER: smtp.gmail.com        # Replace with your SMTP server
+      SMTP_PORT: 587
+      EMAIL_SENDER: ${{ secrets.EMAIL_SENDER }}    # sender email
+      EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }} # sender email password / app password
+      EMAIL_RECEIVER: ${{ secrets.EMAIL_RECEIVER }} # recipient email
+
+    steps:
+      # 1️⃣ Checkout repo
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # 2️⃣ Set up Python
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.11
+
+      # 3️⃣ Set up Docker
+      - name: Set up Docker
+        uses: docker/setup-buildx-action@v2
+
+      # 4️⃣ Build Docker image
+      - name: Build Docker image
+        run: docker build -t ai-cert-api:latest ./
+
+      # 5️⃣ Run FastAPI container
+      - name: Run FastAPI container
+        run: |
+          docker stop ai-cert-api || echo "Container not running"
+          docker rm ai-cert-api || echo "Container not removed"
+          docker run -d -p 8000:8000 --name ai-cert-api ai-cert-api:latest
+          echo "Waiting 10 seconds for FastAPI to start"
+          timeout 10
+
+      # 6️⃣ Install Python dependencies
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      # 7️⃣ Run pipeline with error handling
+      - name: Run pipeline
+        id: pipeline
+        run: |
+          set -e
+          python -m app.pipeline.pipeline
+
+      # 8️⃣ Stop FastAPI container
+      - name: Stop FastAPI container
+        if: always()
+        run: docker stop ai-cert-api
+
+      # 9️⃣ Send email on failure
+      - name: Send failure email
+        if: failure()
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: ${{ env.SMTP_SERVER }}
+          server_port: ${{ env.SMTP_PORT }}
+          username: ${{ env.EMAIL_SENDER }}
+          password: ${{ env.EMAIL_PASSWORD }}
+          subject: "❌ Pipeline Failed - AI_CERTIFICATE_PROCESS_AGENT"
+          body: |
+            The CI/CD pipeline for AI_CERTIFICATE_PROCESS_AGENT has failed.
+            Check the GitHub Actions logs for details.
+          to: ${{ env.EMAIL_RECEIVER }}
+          from: ${{ env.EMAIL_SENDER }}

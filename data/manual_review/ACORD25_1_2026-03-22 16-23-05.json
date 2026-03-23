@@ -1,0 +1,3 @@
+{
+    "error": "FastAPI returned 404: {\"detail\":\"Not Found\"}"
+}
